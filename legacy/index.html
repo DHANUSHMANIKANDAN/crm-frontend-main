@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SriLead CRM</title>
+  <meta name="description" content="SriLead — lead-to-order CRM: intake, dedupe, assignment, opportunities, quotations and sales orders." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c62a1f'/%3E%3Cstop offset='1' stop-color='%23a51d14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 22V10h3v9.5h7V22z' fill='white'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+
+  <div class="shell" id="shell">
+    <aside class="side" id="side">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div class="brand-text">
+          <div class="brand-name">SriLead</div>
+          <div class="brand-sub">Lead → Order engine</div>
+        </div>
+        <button class="collapse-btn" data-act="collapseSide" id="collapseBtn" aria-label="Collapse sidebar" title="Collapse sidebar (⌘B)">«</button>
+      </div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <button class="btn ghost sm full" data-act="simulate" title="Simulate inbound lead">⚡<span class="nl"> Simulate inbound lead</span></button>
+        <div class="hint">Press <kbd>⌘</kbd><kbd>K</kbd> to search &amp; act</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <button class="icon-btn menu" data-act="toggleSide" aria-label="Menu">☰</button>
+        <div class="crumbs" id="crumbs"></div>
+        <button class="search" data-act="palette"><span>Search leads, deals, quotes…</span><kbd>⌘K</kbd></button>
+        <div class="top-right">
+          <span class="save-state" id="saveState" title="Database sync status"></span>
+          <div class="me-wrap">
+            <button class="me" id="userBtn" data-act="userMenu" aria-haspopup="menu"><span class="avatar" id="meAvatar"></span><span class="me-text"><b id="meName"></b><small id="meRole"></small></span><span class="faint">▾</span></button>
+            <div class="user-menu" id="userMenu" role="menu"><button data-act="changePassword" role="menuitem">🔑 Change password</button><button data-act="signOut" role="menuitem">⎋ Sign out</button></div>
+          </div>
+          <div class="bell-wrap"><button class="icon-btn" data-act="bell" id="bellBtn" aria-label="Reminders and notifications" title="Reminders">🔔<span class="bell-count" id="bellCount" style="display:none"></span></button><div class="bell-panel" id="bellPanel"></div></div>
+          <button class="icon-btn" data-act="theme" aria-label="Toggle theme" id="themeBtn">◐</button>
+          <button class="btn primary" data-act="newLead">+ New lead</button>
+        </div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <div id="drawer" class="drawer" aria-hidden="true"></div>
+  <div id="scrim" class="scrim" data-act="closeDrawer"></div>
+  <div id="modal-root"></div>
+  <div id="palette-root"></div>
+  <div id="toasts" class="toasts"></div>
+  <div id="auth" class="auth"></div>
+
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
